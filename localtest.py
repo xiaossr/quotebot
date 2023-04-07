@@ -3,12 +3,13 @@ from requests_oauthlib import OAuth1
 import os
 import random
 
+# replace with your keys
 consumer_key = os.environ.get("CONSUMER_KEY")
 consumer_secret = os.environ.get("CONSUMER_SECRET")
 access_token = os.environ.get("ACCESS_TOKEN")
 access_token_secret = os.environ.get("ACCESS_TOKEN_SECRET")
 
-allquotes = list(open('quotes.txt'))
+allquotes = list(open('quotes.txt', encoding='utf-8'))
 
 def random_quote():
   return random.choice(allquotes).rstrip()
@@ -24,11 +25,12 @@ def connect_to_oauth(consumer_key, consumer_secret, access_token, access_token_s
 def main():
   fact = random_quote()
   payload = format_quote(fact)
+  #print(payload)
   url, auth = connect_to_oauth(
       consumer_key, consumer_secret, access_token, access_token_secret
   )
   request = requests.post(
-      auth=auth, url=url, json=payload, headers={"Content-Type": "application/json"}
+      auth=auth, url=url, json=payload, headers={"Content-Type": "application/json"}, verify=False
   )
 
 if __name__ == "__main__":
