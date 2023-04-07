@@ -21,7 +21,7 @@ def connect_to_oauth(consumer_key, consumer_secret, access_token, access_token_s
   auth = OAuth1(consumer_key, consumer_secret, access_token, access_token_secret)
   return url, auth
 
-def hello_pubsub(event, context):
+def main():
   fact = random_quote()
   payload = format_quote(fact)
   url, auth = connect_to_oauth(
@@ -30,3 +30,6 @@ def hello_pubsub(event, context):
   request = requests.post(
       auth=auth, url=url, json=payload, headers={"Content-Type": "application/json"}
   )
+
+if __name__ == "__main__":
+  main()
