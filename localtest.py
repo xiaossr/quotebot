@@ -12,18 +12,20 @@ consumer_secret = os.environ.get("CONSUMER_SECRET")
 access_token = os.environ.get("ACCESS_TOKEN")
 access_token_secret = os.environ.get("ACCESS_TOKEN_SECRET")
 
+
 #allquotes = list(open("quotes.txt", encoding="utf-8"))
-url = "https://txti.es/xiaoquoted"
+url = "https://txto.onrender.com/xiaoquoted"
 html = urlopen(url).read()
 soup = BeautifulSoup(html, features="html.parser")
 
 allquotes = []
 for script in soup.find_all(text=True):
-  s = script.get_text().encode("utf-8")
+  s = repr(script.get_text())
+  s = s[1:-1]
   allquotes.append(s)
 
-allquotes = [s for s in allquotes if s != b" " and s != b"\n" and s != b""]
-allquotes = allquotes[1:]
+allquotes = [s for s in allquotes if repr(s) != repr("\\n")]
+allquotes = allquotes[4:-1]
 
 def random_quote():
   return random.choice(allquotes)
@@ -37,12 +39,12 @@ def connect_to_oauth(consumer_key, consumer_secret, access_token, access_token_s
   return url, auth
 
 def main():
-  #print(allquotes)
+  print(allquotes)
+
   fact = random_quote()
   payload = format_quote(fact)
-  payload["text"] = payload["text"][2:-1]
   payload["text"] = payload["text"].replace('\\\\n', '\n')
-  #print(payload)
+  print(payload)
   #url, auth = connect_to_oauth(
   #    consumer_key, consumer_secret, access_token, access_token_secret
   #)

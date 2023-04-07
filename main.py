@@ -13,7 +13,7 @@ access_token = os.environ.get("ACCESS_TOKEN")
 access_token_secret = os.environ.get("ACCESS_TOKEN_SECRET")
 
 #allquotes = list(open("quotes.txt", encoding="utf-8"))
-url = "https://txti.es/xiaoquoted"
+url = "https://txto.onrender.com/xiaoquoted"
 html = urlopen(url).read()
 soup = BeautifulSoup(html, features="html.parser")
 
