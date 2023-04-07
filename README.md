@@ -44,9 +44,10 @@ Create a project, if it hasn't been automatically created already. You will need
 
 Go to the [Cloud Functions Overview page](https://console.cloud.google.com/functions/list). Click **Create function**. For Environment, select 1st gen. Name your function, and select the trigger as "Cloud Pub/Sub" with a new topic name. Set your cloud region to your location. Expand the Runtime option, and add 4 different variables: `"CONSUMER_KEY"` (your api key), `"CONSUMER_SECRET"` (your secret api key), `"ACCESS_TOKEN"`, and `"ACCESS_TOKEN_SECRET"`. Paste your keys into these different runtime environment variables. Click next.
 
-Copy `main.py` from this github into the one on your project. Additionally, paste `requirements.txt` exactly into the file with the same name. Add a file called `quotes.txt` and put all of your quotes, each on a **new line**, into the quotes file. 
+Select Python 3.9 as your language in the top left. Copy `main.py` from this github into the one on your project, and change the link in `main.py` to the [txto](texto.onrender.com) that has all of your quotes on separate new lines. You can include characters such as `'\n'` in each line, the code will automatically formate it correctly.
 
-Alternatively, make a txti.es (or a txto.onrender.com, which has greater support for chinese and similar characters) file, put each of your quotes on a new line, and save it. Replace link displayed in `main.py`. This will allow you to print new lines in different quotes. Note that you may need to adjust some of the code if you **do not** use txto.onrender.com for your quotes.
+Additionally, paste `requirements.txt` exactly into the file with the same name. 
+Note that you may need to adjust some of the code if you **do not** use txto.onrender.com for your quotes.
 
 Click deploy. The function should successfully deploy within a minute.
 
