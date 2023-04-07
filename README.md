@@ -24,11 +24,11 @@ oauth_token=zlgW3QAAAAAA2_NZAAABfxxxxxxk&oauth_token_secret=pBYEQzdbyMqIcyDzyn0X
 ```
 Copy the contents of the box. 
 
-Copy the oauth_token value (`zlgW3QAAAAAA2_NZAAABfxxxxxxk` in the example) and paste it after https://api.twitter.com/oauth/authenticate?oauth_token=. Visit this link on your bot account; notice that it redirects you, and the website link now has `oauth_verifier=` in it. Copy this value.
+Copy the oauth_token value (`zlgW3QAAAAAA2_NZAAABfxxxxxxk` in the example) and paste it after https://api.twitter.com/oauth/authenticate?oauth_token=. Visit this link on your bot account and click Authorize. This should return a 7 digit PIN, which is your OAuth verifier. Save this PIN.
 
 Now, go back to Insomnia. Make another `POST` request, this time with the link below. 
 ```
-https://api.twitter.com/oauth/access_token?oauth_verifier=(the verifier in the link)&oauth_token=(your previous oauth_token value)
+https://api.twitter.com/oauth/access_token?oauth_verifier=(your 7 digit pin)&oauth_token=(your previous oauth_token value)
 ```
 Hit `Send`. You should recieve a response like below: 
 ```
