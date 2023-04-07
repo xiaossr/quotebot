@@ -46,6 +46,8 @@ Go to the [Cloud Functions Overview page](https://console.cloud.google.com/funct
 
 Copy `main.py` from this github into the one on your project. Additionally, paste `requirements.txt` exactly into the file with the same name. Add a file called `quotes.txt` and put all of your quotes, each on a **new line**, into the quotes file. 
 
+Alternatively, make a txti.es file, put each of your quotes on a new line, and save it. Replace link displayed in `main.py`. This will allow you to print new lines in different quotes.
+
 Click deploy. The function should successfully deploy within a minute.
 
 ## Google Cloud Scheduler
