@@ -44,7 +44,7 @@ Create a project, if it hasn't been automatically created already. You will need
 
 Go to the [Cloud Functions Overview page](https://console.cloud.google.com/functions/list). Click **Create function**. For Environment, select 1st gen. Name your function, and select the trigger as "Cloud Pub/Sub" with a new topic name. Set your cloud region to your location. Expand the Runtime option, and add 4 different variables: `"CONSUMER_KEY"` (your api key), `"CONSUMER_SECRET"` (your secret api key), `"ACCESS_TOKEN"`, and `"ACCESS_TOKEN_SECRET"`. Paste your keys into these different runtime environment variables. Click next.
 
-Select Python 3.9 as your language in the top left. Copy `main.py` from this github into the one on your project, and change the link in `main.py` to the [txto](texto.onrender.com) that has all of your quotes on separate new lines. You can include characters such as `'\n'` in each line, the code will automatically formate it correctly.
+Select Python 3.9 as your language in the top left. Copy `main.py` from this github into the one on your project, and change the link in `main.py` to the [txto](https://texto.onrender.com) that has all of your quotes on separate new lines. You can include characters such as `'\n'` in each line, the code will automatically formate it correctly.
 
 Additionally, paste `requirements.txt` exactly into the file with the same name. 
 Note that you may need to adjust some of the code if you **do not** use txto.onrender.com for your quotes.
